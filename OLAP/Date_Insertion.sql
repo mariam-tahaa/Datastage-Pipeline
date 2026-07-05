@@ -1,10 +1,10 @@
 DECLARE
-    v_start_date DATE := TO_DATE('2023-01-01', 'YYYY-MM-DD');
-    v_end_date   DATE := TO_DATE('2025-12-31', 'YYYY-MM-DD');
-    v_current    DATE;
+    v_start_date DATE := DATE '2023-01-01';
+    v_end_date   DATE := DATE '2025-12-31';
+    v_current     DATE;
 BEGIN
     v_current := v_start_date;
-    
+
     WHILE v_current <= v_end_date LOOP
         INSERT INTO dim_date (
             Date_Key,
@@ -13,19 +13,18 @@ BEGIN
             Month,
             Quarter,
             Year
-        ) VALUES (
-            -- Date_Key format: YYYYMMDD (e.g., 20230101) for clean integer PK lookups
-            TO_NUMBER(TO_CHAR(v_current, 'YYYYMMDD')), 
-            v_current,
-            TO_NUMBER(TO_CHAR(v_current, 'DD')),
-            TO_NUMBER(TO_CHAR(v_current, 'MM')),
+        )
+        VALUES (
+            TO_CHAR(v_current, 'YYYYMMDD'),    
+            TO_CHAR(v_current, 'YYYY-MM-DD'),  
+            EXTRACT(DAY FROM v_current),
+            EXTRACT(MONTH FROM v_current),
             TO_NUMBER(TO_CHAR(v_current, 'Q')),
-            TO_NUMBER(TO_CHAR(v_current, 'YYYY'))
+            EXTRACT(YEAR FROM v_current)
         );
-        
-        -- Move to the next day
+
         v_current := v_current + 1;
     END LOOP;
-    
+
     COMMIT;
 END;

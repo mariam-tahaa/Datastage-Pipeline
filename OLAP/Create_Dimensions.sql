@@ -72,8 +72,8 @@ CREATE TABLE DIM_PROMOTION (
 );
 
 CREATE TABLE dim_date (
-    Date_Key   NUMBER(8) NOT NULL,
-    Full_Date  DATE NOT NULL,
+    Date_Key   Varchar2(10) NOT NULL,
+    Full_Date  Varchar2(10) NOT NULL,
     Day        NUMBER(2) NOT NULL,
     Month      NUMBER(2) NOT NULL,
     Quarter    NUMBER(1) NOT NULL,
