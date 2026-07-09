@@ -5,14 +5,14 @@ BEGIN HEADER
    ServerName "IBMDSSERVER"
    ToolInstanceID "ITI45"
    MDISVersion "1.0"
-   Date "2026-07-06"
-   Time "21.39.22"
+   Date "2026-07-09"
+   Time "14.21.19"
    ServerVersion "9.1"
 END HEADER
 BEGIN DSJOB
    Identifier "Fact_Reservations"
-   DateModified "2026-07-06"
-   TimeModified "21.32.28"
+   DateModified "2026-07-09"
+   TimeModified "14.20.28"
    BEGIN DSRECORD
       Identifier "ROOT"
       OLEType "CJobDefn"
@@ -284,7 +284,7 @@ lookup
 ## Operator options
 -table
 -key Promo_ID
--ifNotFound fail
+-ifNotFound continue
 
 ## General options
 [ident('Lookup_46'); jobmon_ident('Lookup_46')]
@@ -392,14 +392,14 @@ keep
       ZoomValue "100"
       StageXSize "48|48|48|48|48|48|48"
       StageYSize "48|48|48|48|48|48|48"
-      ContainerViewSizing "-001 0001 1447 0472 0000 0001 0000 0000"
+      ContainerViewSizing "-001 0001 1447 0472 0000 0000 0000 0000"
       StageNames "Oracle_Connector_41|Oracle_Connector_42|Key_Generator|Sequential_File_45|Lookup_46|Transformer_49|Key_Genet"
       StageTypeIDs "OracleConnectorPX|OracleConnectorPX|PxSurrogateKeyGenerator|PxSequentialFile|PxLookup|CTransformerStage|PxSurrogateKeyGenerator"
       LinkNames "DSLink43| |DSLink44|DSLink47|DSLink48|DSLink50|DSLink56"
       LinkHasMetaDatas "True| |True|True|True|True|True"
       LinkTypes "1| |1|1|1|1|2"
-      LinkNamePositionXs "437| |967|322|623|847|504"
-      LinkNamePositionYs "73| |124|211|84|142|174"
+      LinkNamePositionXs "437| |1009|322|623|847|504"
+      LinkNamePositionYs "73| |53|211|105|142|174"
       TargetStageIDs "V0S46| |V0S42|V137S0|V0S49|V136S0|V0S46"
       SourceStageEffectiveExecutionModes "2| |1|1|2|2|1"
       SourceStageRuntimeExecutionModes "2| |1|1|2|2|1"
@@ -2114,7 +2114,7 @@ keep
          Value "0"
       END DSSUBRECORD
       LeftTextPos "623"
-      TopTextPos "84"
+      TopTextPos "105"
       LinkMinimised "0"
    END DSRECORD
    BEGIN DSRECORD
@@ -2124,8 +2124,8 @@ keep
       Name "DSLink56"
       Partner "V137S0|V137S0P6"
       LinkType "2"
-      ConditionNotMet "fail"
-      LookupFail "fail"
+      ConditionNotMet "continue"
+      LookupFail "continue"
       Properties "CCustomProperty"
       BEGIN DSSUBRECORD
          Name "allow_dups"
@@ -3416,8 +3416,8 @@ record
          Name "QueueUpperSize"
          Value "0"
       END DSSUBRECORD
-      LeftTextPos "967"
-      TopTextPos "124"
+      LeftTextPos "1009"
+      TopTextPos "53"
       LinkMinimised "0"
    END DSRECORD
    BEGIN DSRECORD
