@@ -109,6 +109,9 @@ airline-datastage_pipeline/
 
 ## 📊 Data Model
 
+<details>
+<summary><strong>View ER Diagram</strong></summary>
+
 ```mermaid
 erDiagram
     DimPassenger {
