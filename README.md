@@ -9,7 +9,7 @@ An ETL system for an airline platform. The system ingests data from heterogeneou
 - [Architecture](#architecture)
 - [Pipeline Flow](#pipeline-flow)
 - [Project Features](#project-features)
-- [Project Structure](#project-structure)(#-project-structure)
+- [Project Structure](#project-structure)
 - [Key Components](#key-components)
 - [Data Model](#data-model)
 - [DimPassenger (SCD Type 2)](#dimpassenger-scd-type-2)
@@ -639,7 +639,7 @@ The DataStage job implements a standard **Slowly Changing Dimension Type 2** pip
 - Expiring previous versions
 - Inserting new active versions
 - Maintaining a complete historical record of passenger attribute changes
-```
+
 
 ## 🧩 Key Components
 
