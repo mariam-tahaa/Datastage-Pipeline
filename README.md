@@ -6,13 +6,16 @@ An ETL system for an airline platform. The system ingests data from heterogeneou
 ---
 
 ## 📑 Table of Contents
-- [Architecture](#-architecture)
-- [Pipeline Flow](#-pipeline-flow)
-- [Project Structure](#-project-structure)
-- [Key Components](#-key-components)
-- [Data Model](#-data-model-star-schema)
-- [Technology Stack](#-technology-stack)
-- [Getting Started](#-getting-started)
+- [Architecture](#architecture)
+- [Pipeline Flow](#pipeline-flow)
+- [Project Features](#project-features)
+- [Project Structure](#project-structure)(#-project-structure)
+- [Key Components](#key-components)
+- [Data Model](#data-model)
+- [DimPassenger (SCD Type 2)](#dimpassenger-scd-type-2)
+- [Technology Stack](#technology-stack)
+- [Getting Started](#getting-started)
+- [Team](#team)
 
 ---
 
@@ -619,6 +622,10 @@ The ETL performs two operations:
 
 This preserves the passenger's complete history while ensuring only one record remains active.
 
+---
+
+## Summary
+
 The DataStage job implements a standard **Slowly Changing Dimension Type 2** pipeline by:
 
 - Detecting new and modified passengers
@@ -690,12 +697,12 @@ git clone https://github.com/mariam-tahaa/Airline_Datastage_Pipeline
 ```
 
 Import the DataStage Jobs:
-Use the DataStage Client (Designer) to import the .dsx files from the DataStage/ and FactJobss/ folders.
+Use the DataStage Client (Designer) to import the .dsx files from the DataStage/ and FactJobs/ folders.
 
 ## 👥 Team
 
 Developed as part of the **ITI Data Management Track**.
 
 - Shahd Hamdi
-- Salma Hamid
+- Salma Algayar
 - Mariam Taha
