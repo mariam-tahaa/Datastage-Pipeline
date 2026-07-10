@@ -635,6 +635,7 @@ The DataStage job implements a standard **Slowly Changing Dimension Type 2** pip
 - Inserting new active versions
 - Maintaining a complete historical record of passenger attribute changes
 ```
+---
 
 ## 🧩 Key Components
 
