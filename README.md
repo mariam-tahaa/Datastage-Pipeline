@@ -9,7 +9,7 @@ An ETL system for an airline platform. The system ingests data from heterogeneou
 - [Architecture](#architecture)
 - [Pipeline Flow](#pipeline-flow)
 - [Project Features](#project-features)
-- [Project Structure](#project-structure)
+- [Project Structure](#project-structure)(#-project-structure)
 - [Key Components](#key-components)
 - [Data Model](#data-model)
 - [DimPassenger (SCD Type 2)](#dimpassenger-scd-type-2)
@@ -108,6 +108,9 @@ airline-datastage_pipeline/
 ```
 
 ## 📊 Data Model
+
+<details>
+<summary><strong>View ER Diagram</strong></summary>
 
 ```mermaid
 erDiagram
@@ -395,6 +398,8 @@ erDiagram
     DimRoute }o--|| DimAirport : "Destination_Airport_ID"
 ```
 
+</details>
+
 ## DimPassenger (SCD Type 2)
 
 This document provides a comprehensive overview of the IBM InfoSphere DataStage parallel job used to populate and maintain the **DimPassenger** dimension table using a **Slowly Changing Dimension Type 2 (SCD Type 2)** strategy.
@@ -635,10 +640,6 @@ The DataStage job implements a standard **Slowly Changing Dimension Type 2** pip
 - Inserting new active versions
 - Maintaining a complete historical record of passenger attribute changes
 ```
-
----
-
-
 
 ## 🧩 Key Components
 
