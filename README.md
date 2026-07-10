@@ -395,11 +395,10 @@ erDiagram
 ## 🧩 Key Components
 
 1. Ingestion Layer
-Sequential File stages ingest CSV files, while Oracle Connector stages read operational data directly from Oracle databases. 
+
+- Sequential File stages ingest CSV files, while Oracle Connector stages read operational data  directly from Oracle databases. 
 
 2. Validation & Cleansing
-
-Validation is performed using Transformer and Filter stages.
 
 - Null checks on mandatory fields.
 - Referential integrity validation using Lookup stages.
@@ -407,14 +406,16 @@ Validation is performed using Transformer and Filter stages.
 - Business rule validation.
 
 3. Surrogate Key Generator
-This stage generates numeric surrogate keys (e.g., the Surrogate Key column) for both dimensions and facts. It persists the last generated value in a State File (e.g., DIM_BOOKING_CHANNEL.state) to ensure sequential consistency even after server restarts.
+
+- This stage generates numeric surrogate keys (e.g., the Surrogate Key column) for both dimensions and facts. It persists the last generated value in a State File (e.g., DIM_BOOKING_CHANNEL.state) to ensure sequential consistency even after server restarts.
 
 4. Transformation Layer (Business Logic)
 
-Business transformations are implemented using Transformer stages, including column mapping, derived attributes, data type conversion, conditional logic, and business rule implementation.
+- Business transformations are implemented using Transformer stages, including column mapping, derived attributes, data type conversion, conditional logic, and business rule implementation.
 
 5. Loading Layer (DWH Loader)
-The final loading phase uses Oracle Connector stages to populate the Star Schema Data Warehouse after all transformations and lookups are completed.
+
+- The final loading phase uses Oracle Connector stages to populate the Star Schema Data Warehouse after all transformations and lookups are completed.
 
 | Business Process | Fact Tables | Purpose |
 |------------------|------------|---------|
@@ -425,10 +426,8 @@ The final loading phase uses Oracle Connector stages to populate the Star Schema
 
 - Indexes & Partitions:
 A robust indexing strategy is implemented to accelerate lookups:
-
-IDX_FACT_TICKET_PASSENGER & IDX_RES_PASSENGER: Accelerate passenger joins.
-
-IDX_FACT_TICKET_DATE & IDX_RES_BOOKDATE: Accelerate time-based queries.
+- IDX_FACT_TICKET_PASSENGER & IDX_RES_PASSENGER: Accelerate passenger joins.
+- IDX_FACT_TICKET_DATE & IDX_RES_BOOKDATE: Accelerate time-based queries.
 
 ## 💻 Technology Stack
 
